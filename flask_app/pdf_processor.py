@@ -5,10 +5,13 @@ import docx
 
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings.openai import OpenAIEmbeddings
-from langchain.vectorstores import FAISS
+# [deprecated] from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
-from langchain.llms import OpenAI
-from langchain.callbacks import get_openai_callback
+# [deprecated] from langchain.llms import OpenAI
+from langchain_community.llms import OpenAI
+# [deprecated] from langchain.callbacks import get_openai_callback
+from langchain_community.callbacks import get_openai_callback
 
 load_dotenv()
 

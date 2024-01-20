@@ -4,7 +4,7 @@ from pdf_processor import process_pdf_query
 
 app = Flask(__name__)
 
-@app.route('/', methos=['GET','POST'])
+@app.route('/', methods=['GET','POST'])
 def index():
     if request.method == 'POST':
         if 'file' not in request.files:
