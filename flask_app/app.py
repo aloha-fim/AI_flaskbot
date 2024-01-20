@@ -19,11 +19,12 @@ def index():
         file.save(filename)
 
         question = request.form['question']
-        answer = process_pdf_query(filename, question)
+        response = process_pdf_query(filename, question)
 
-        return render_template('upload.html', answer=answer)
+        return render_template('upload.html', response=response)
 
     return render_template('upload.html')
 
 if __name__ == '__main__':
-    app.run()
+        app.run(debug=True, port=8001)
+
