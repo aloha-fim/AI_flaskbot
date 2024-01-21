@@ -1,59 +1,200 @@
-<!-- templates/upload.html -->
+
+{% block content %}
+
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Query</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-        }
-        h1, h2 {
-            text-align: center;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        label {
-            margin-bottom: 10px;
-        }
-        input[type="text"], input[type="file"] {
-            margin-bottom: 20px;
-        }
-        pre {
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-    </style>
-</head>
 <body>
-    <div class="container">
-        <h1>Upload PDF and ask a question</h1>
-        <form action="/" method="POST" enctype="multipart/form-data">
-            <label for="file">Select a PDF file:</label>
-            <input type="file" id="file" name="file" accept=".pdf"><br>
-            <label for="question">Type your question:</label>
-            <input type="text" id="question" name="question" required><br>
-            <input type="submit" value="Submit">
-        </form>
-        {% if response %}
-        <h2>Response:</h2>
-        <pre>{{ response }}</pre>
-        {% endif %}
-    </div>
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Main banner START -->
+<section class="position-relative py-5 py-lg-5" style="background-image:url(new_york_sunshine/project_solar/static/assets/images/bg/20.jpg); background-position: center left; background-size: cover;">
+	<!-- Background dark overlay -->
+	<div class="bg-overlay bg-dark opacity-8"></div>
+	<div class="container z-index-9 position-relative">
+		<div class="row py-sm-4">
+			<!-- Title -->
+			<div class="col-xl-7 m-auto text-center">
+				<br>
+				<h6 class="text-white fw-normal mb-3">Sustainable Hosts + World</h6>
+				<br>
+				<br>
+				<h1 class="display-6 text-white mb-0">OuTdoors To Our Travel Family</h1>
+					<h6 class="text-white fw-normal mb-3"></h6>
+						<!-- SVG START -->
+						<span class="text-white fw-normal mb-3">
+							<svg width="390.5px" height="21.5px" viewBox="0 0 445.5 21.5">
+								<path class="fill-primary opacity-7" d="M409.9,2.6c-9.7-0.6-19.5-1-29.2-1.5c-3.2-0.2-6.4-0.2-9.7-0.3c-7-0.2-14-0.4-20.9-0.5 c-3.9-0.1-7.8-0.2-11.7-0.3c-1.1,0-2.3,0-3.4,0c-2.5,0-5.1,0-7.6,0c-11.5,0-23,0-34.5,0c-2.7,0-5.5,0.1-8.2,0.1 c-6.8,0.1-13.6,0.2-20.3,0.3c-7.7,0.1-15.3,0.1-23,0.3c-12.4,0.3-24.8,0.6-37.1,0.9c-7.2,0.2-14.3,0.3-21.5,0.6 c-12.3,0.5-24.7,1-37,1.5c-6.7,0.3-13.5,0.5-20.2,0.9C112.7,5.3,99.9,6,87.1,6.7C80.3,7.1,73.5,7.4,66.7,8 C54,9.1,41.3,10.1,28.5,11.2c-2.7,0.2-5.5,0.5-8.2,0.7c-5.5,0.5-11,1.2-16.4,1.8c-0.3,0-0.7,0.1-1,0.1c-0.7,0.2-1.2,0.5-1.7,1 C0.4,15.6,0,16.6,0,17.6c0,1,0.4,2,1.1,2.7c0.7,0.7,1.8,1.2,2.7,1.1c6.6-0.7,13.2-1.5,19.8-2.1c6.1-0.5,12.3-1,18.4-1.6 c6.7-0.6,13.4-1.1,20.1-1.7c2.7-0.2,5.4-0.5,8.1-0.7c10.4-0.6,20.9-1.1,31.3-1.7c6.5-0.4,13-0.7,19.5-1.1c2.7-0.1,5.4-0.3,8.1-0.4 c10.3-0.4,20.7-0.8,31-1.2c6.3-0.2,12.5-0.5,18.8-0.7c2.1-0.1,4.2-0.2,6.3-0.2c11.2-0.3,22.3-0.5,33.5-0.8 c6.2-0.1,12.5-0.3,18.7-0.4c2.2-0.1,4.4-0.1,6.7-0.1c11.5-0.1,23-0.2,34.6-0.4c7.2-0.1,14.4-0.1,21.6-0.1c12.2,0,24.5,0.1,36.7,0.1 c2.4,0,4.8,0.1,7.2,0.2c6.8,0.2,13.5,0.4,20.3,0.6c5.1,0.2,10.1,0.3,15.2,0.4c3.6,0.1,7.2,0.4,10.8,0.6c10.6,0.6,21.1,1.2,31.7,1.8 c2.7,0.2,5.4,0.4,8,0.6c2.9,0.2,5.8,0.4,8.6,0.7c0.4,0.1,0.9,0.2,1.3,0.3c1.1,0.2,2.2,0.2,3.2-0.4c0.9-0.5,1.6-1.5,1.9-2.5 c0.6-2.2-0.7-4.5-2.9-5.2c-1.9-0.5-3.9-0.7-5.9-0.9c-1.4-0.1-2.7-0.3-4.1-0.4c-2.6-0.3-5.2-0.4-7.9-0.6 C419.7,3.1,414.8,2.9,409.9,2.6z"/>
+							</svg>
+						</span>
+						<!-- SVG END -->
+					</span>
+
+			</div>
+
+		</div> <!-- Row END -->
+	</div>
+</section>
+<section class="pt-0 pt-sm-0">
+	<div class="container">
+			<!-- Search START -->
+			<div class="col-lg-7 mx-auto">
+				<div class="bg-blur bg-white bg-opacity-10 border border-light border-opacity-25 rounded-3 p-3 mt-5">
+					<!-- Form START -->
+					<form class="row g-3 justify-content-center align-items-center">
+					<div class="col-lg-3 d-grid">
+                        <form action="/" method="POST" enctype="multipart/form-data">
+                            <label for="file">Select a PDF file:</label>
+                            <input type="file" id="file" name="file" accept=".pdf"><br>
+                            <label for="question">Type your question:</label>
+                            <input type="text" id="question" name="question" required><br>
+                            <input type="submit" value="Submit">
+                        </form>
+                        {% if response %}
+                        <h2>Response:</h2>
+                        <pre>{{ response }}</pre>
+                        {% endif %}
+					</div>
+
+					</form>
+					<!-- Form END -->
+				</div>
+			</div>
+			<!-- Search END -->
+<!-- =======================
+Main banner END -->
+</div>
+</section>
+<!-- =======================
+Category START -->
+<section>
+	<div class="container">
+		<div class="row g-4 align-items-center">
+
+			<!-- Category START -->
+			<div class="col-lg-10">
+
+				<!-- Slider START -->
+				<div class="tiny-slider arrow-round arrow-xs arrow-dark">
+					<div class="tiny-slider-inner" data-autoplay="true" data-arrow="true" data-edge="2" data-dots="false" data-items-xl="5" data-items-lg="3" data-items-sm="2" data-items-xs="1">
+
+						<!-- Slider item -->
+						<div>
+							<div class="card card-body bg-light text-center align-items-center">
+								<!-- Icon -->
+								<div class="icon-xl bg-mode rounded-circle mb-3">
+									<figure>
+										<svg width="43.7px" height="38.7px" viewBox="0 0 43.7 38.7" style="enable-background:new 0 0 43.7 38.7;" xml:space="preserve">
+											<path class="fill-mode-inverse" d="M43.2,12.5c-0.5-0.4-1.1-0.5-1.6-0.3c-0.5,0.2-0.9,0.7-1.1,1.1l-1.4,4.1l-2.1,3.1L36.2,21l0.1-0.2c0.4-0.9,0-1.9-0.8-2.3 c-0.8-0.4-1.7-0.2-2.2,0.5L30,23.1l-3.7,1.7c-2,0.9-3.4,2.9-3.7,5.1c0,0,0,0.1,0,0.1l0,3.7c-0.3,0-0.5,0.1-0.7,0.3 c-0.2-0.1-0.4-0.2-0.7-0.3l0-3.7c0,0,0-0.1,0-0.1c-0.3-2.2-1.7-4.1-3.7-5.1l-3.7-1.7L10.5,19C10,18.4,9,18.2,8.3,18.5 C7.4,19,7.1,20,7.4,20.9L7.5,21l-0.7-0.4l-2.1-3.1l-1.4-4.1c-0.2-0.5-0.6-0.9-1.1-1.1C1.6,12,1,12.1,0.6,12.5 c-0.5,0.4-0.7,1-0.5,1.6l1.1,4.9C1.4,20.4,2,21.7,2.9,23l1.3,1.9c0.9,1.3,2.1,2.4,3.5,3.3c0.1,0.1,0.3,0.2,0.4,0.3 c0.3,0.2,0.7,0.1,0.9-0.2c0.2-0.3,0.1-0.7-0.2-0.9c-0.1-0.1-0.3-0.2-0.4-0.3c-1.2-0.7-2.3-1.7-3.1-2.9l-1.3-1.9 c-0.8-1.1-1.3-2.3-1.6-3.6l-1.1-4.9c0-0.2,0.1-0.3,0.1-0.3c0,0,0.2-0.1,0.3-0.1c0.1,0,0.3,0.2,0.3,0.4L3.5,18c0,0.1,0,0.1,0.1,0.2 l2.2,3.3c0.1,0.1,0.1,0.1,0.2,0.2L8.4,23l0.7,1.4c0.1,0.2,0.3,0.3,0.6,0.3c0.1,0,0.2,0,0.3-0.1c0.3-0.2,0.4-0.5,0.3-0.9l-0.8-1.5 l-0.8-2c-0.1-0.3,0-0.6,0.3-0.7c0.2-0.1,0.5,0,0.7,0.2l3.4,4.2c0.1,0.1,0.1,0.1,0.2,0.2l3.8,1.7c1.6,0.7,2.8,2.3,3,4l0,3.6h-6.5 c-0.1-1.6-0.3-2.6-0.8-3.2c-0.4-0.5-0.8-0.9-1.3-1.4c-0.3-0.2-0.7-0.2-0.9,0.1c-0.2,0.3-0.2,0.7,0.1,0.9c0.4,0.4,0.8,0.8,1.1,1.2 c0.1,0.2,0.4,0.8,0.5,2.4H12c-0.8,0-1.5,0.7-1.5,1.5v2.3c0,0.8,0.7,1.5,1.5,1.5h9c0.3,0,0.6-0.1,0.9-0.3c0.2,0.2,0.6,0.3,0.9,0.3 h9c0.8,0,1.5-0.7,1.5-1.5v-2.3c0-0.8-0.7-1.5-1.5-1.5h-0.1c0.1-1.7,0.4-2.3,0.5-2.4c1-1.4,2.7-2.4,3.9-3.1 c1.4-0.8,2.6-1.9,3.5-3.3l1.3-1.9c0.9-1.2,1.5-2.6,1.8-4.1l1.1-4.9C43.8,13.5,43.6,12.9,43.2,12.5z M21.2,37.4 c0,0.1-0.1,0.2-0.2,0.2h-9c-0.1,0-0.2-0.1-0.2-0.2v-2.3c0-0.1,0.1-0.2,0.2-0.2h9c0.1,0,0.2,0.1,0.2,0.2V37.4z M31.7,34.9 c0.1,0,0.2,0.1,0.2,0.2v2.3c0,0.1-0.1,0.2-0.2,0.2h-9c-0.1,0-0.2-0.1-0.2-0.2v-2.3c0-0.1,0.1-0.2,0.2-0.2H31.7z M42.5,13.8 l-1.1,4.9c-0.3,1.3-0.8,2.5-1.6,3.6l-1.3,1.9c-0.8,1.2-1.9,2.2-3.1,2.9c-1.3,0.7-3.1,1.9-4.2,3.4c-0.5,0.6-0.7,1.7-0.8,3.2h-6.5 l0-3.6c0.2-1.8,1.4-3.3,3-4l3.8-1.7c0.1,0,0.2-0.1,0.2-0.2l3.4-4.2c0.2-0.2,0.5-0.3,0.7-0.2c0.3,0.1,0.4,0.4,0.3,0.7l-0.8,2 l-0.8,1.5c-0.2,0.3,0,0.7,0.3,0.9c0.1,0.1,0.2,0.1,0.3,0.1c0.2,0,0.4-0.1,0.6-0.3l0.7-1.4l2.4-1.4c0.1,0,0.1-0.1,0.2-0.2l2.2-3.3 c0,0,0.1-0.1,0.1-0.2l1.4-4.2c0-0.1,0.2-0.3,0.3-0.4c0.2-0.1,0.3,0,0.3,0.1C42.4,13.5,42.5,13.6,42.5,13.8z"/>
+											<path class="fill-primary" d="M33.6,6.5c-0.2-0.2-0.4-0.2-0.7-0.1c-0.4,0.1-1.4,0.4-2.6,0.9c-0.2-2-0.6-3.5-0.7-3.9 c-0.1-0.2-0.2-0.4-0.5-0.5c-0.2-0.1-0.5,0-0.7,0.1c-0.4,0.3-1.5,1.2-2.8,2.5c-1.3-2.7-2.8-4.7-3.2-5.2C22.3,0.1,22.1,0,21.9,0 c-0.2,0-0.4,0.1-0.6,0.3c-0.4,0.5-1.9,2.5-3.2,5.2c-1.3-1.3-2.4-2.2-2.8-2.5c-0.2-0.1-0.5-0.2-0.7-0.1c-0.2,0.1-0.4,0.3-0.5,0.5 c-0.1,0.5-0.5,2-0.7,3.9c-1.2-0.5-2.2-0.8-2.6-0.9c-0.2-0.1-0.5,0-0.7,0.1C9.9,6.7,9.8,6.9,9.8,7.2c0.1,0.9,0.4,5.5,3.2,9.5 c2.3,3.4,6.4,3.8,8.1,3.8c0.4,0,0.6,0,0.7,0c0,0,0,0,0,0c0,0,0,0,0,0c0.1,0,0.4,0,0.7,0c1.7,0,5.8-0.4,8.1-3.8 c2.8-4,3.1-8.6,3.2-9.5C33.9,6.9,33.8,6.7,33.6,6.5z M28.6,4.5c0.2,0.8,0.4,1.9,0.5,3.3c-0.5,0.2-1.1,0.5-1.6,0.8c0,0,0,0,0,0 c-0.2,0.1-0.3,0.2-0.5,0.3c0,0,0,0,0,0c-0.2-0.7-0.5-1.5-0.7-2.1C27.2,5.7,28,5,28.6,4.5z M15.1,4.5c0.6,0.5,1.5,1.3,2.4,2.3 c-0.3,0.7-0.5,1.4-0.7,2.1c0,0,0,0,0,0c-0.2-0.1-0.3-0.2-0.5-0.3c0,0,0,0,0,0c-0.6-0.3-1.1-0.6-1.6-0.8 C14.7,6.4,14.9,5.2,15.1,4.5z M14,15.9c-2.1-3.1-2.7-6.5-2.9-8.1c0.9,0.3,2.5,0.9,4.3,1.8c0.1,0,0.1,0.1,0.2,0.1 c0,0,0.1,0,0.1,0.1c0.1,0,0.2,0.1,0.3,0.1c0,0,0.1,0,0.1,0c0.1,0.1,0.2,0.1,0.3,0.2c0,0,0,0,0,0c0,0.1,0,0.2-0.1,0.2c0,0,0,0,0,0 c0,0.1,0,0.2,0,0.2c0,0,0,0,0,0c0,0.1,0,0.2,0,0.2c0,0,0,0,0,0c0,0.1,0,0.2,0,0.3c0,0.1,0,0.2,0,0.3c0,0,0,0.1,0,0.1 c0,0.1,0,0.2,0,0.2c0,0,0,0.1,0,0.1c0,0.1,0,0.2,0,0.3c0,0,0,0,0,0c0,0.1,0,0.2,0,0.3c0,0,0,0.1,0,0.1c0,0.1,0,0.1,0,0.2 c0,0,0,0.1,0,0.1c0,0.1,0,0.2,0,0.3c0,0,0,0,0,0c0,0.1,0,0.2,0,0.3c0,0,0,0.1,0,0.1c0,0.1,0,0.1,0,0.2c0,0,0,0.1,0,0.1 c0,0.1,0,0.2,0.1,0.3c0,0,0,0,0,0c0,0.1,0,0.2,0.1,0.3c0,0,0,0,0,0.1c0,0.1,0,0.1,0.1,0.2c0,0,0,0,0,0.1c0,0.1,0.1,0.2,0.1,0.2 c0,0,0,0,0,0c0,0.1,0.1,0.2,0.1,0.2c0,0,0,0,0,0.1c0,0.1,0.1,0.1,0.1,0.2c0,0,0,0,0,0.1c0,0.1,0.1,0.1,0.1,0.2c0,0,0,0,0,0 c0,0.1,0.1,0.2,0.1,0.2c0,0,0,0,0,0.1c0,0.1,0.1,0.1,0.1,0.2c0,0,0,0,0,0.1c0,0.1,0.1,0.1,0.1,0.2c0,0,0,0,0,0 c0,0.1,0.1,0.1,0.1,0.2c0,0,0,0,0,0c0,0.1,0.1,0.1,0.1,0.2c0,0,0,0,0,0.1c0,0.1,0.1,0.1,0.1,0.2c0,0,0,0,0,0 c0,0.1,0.1,0.1,0.2,0.2c0,0,0,0,0,0c0,0,0.1,0.1,0.1,0.1c0,0,0,0,0,0c0.1,0.1,0.2,0.2,0.3,0.3c0,0,0,0,0,0c0,0,0.1,0.1,0.1,0.1 c0,0,0,0,0,0c0.1,0.1,0.2,0.2,0.3,0.3c0,0,0,0,0,0c0,0,0.1,0.1,0.1,0.1c0,0,0,0,0,0c0.1,0.1,0.2,0.2,0.3,0.3c0,0,0,0,0,0 c0,0,0.1,0.1,0.1,0.1c0,0,0,0,0,0C17.9,18.9,15.5,18.1,14,15.9z M29.7,15.9c-1.5,2.2-3.9,2.9-5.6,3.1c0.7-0.6,1.5-1.3,2.1-2.3 c0.2-0.3,0.1-0.7-0.2-0.9c-0.3-0.2-0.7-0.1-0.9,0.2c-1.1,1.6-2.6,2.6-3.3,3c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0 c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0-0.1,0c0,0,0,0,0,0c0,0,0,0-0.1,0c0,0,0,0,0,0 c0,0,0,0-0.1,0c0,0,0,0,0,0c0,0,0,0-0.1,0c0,0,0,0,0,0c0,0,0,0-0.1,0c0,0,0,0,0,0c0,0,0,0-0.1,0c0,0,0,0,0,0c0,0,0,0-0.1,0 c0,0,0,0,0,0c0,0,0,0-0.1-0.1c0,0,0,0,0,0c0,0,0,0-0.1-0.1c0,0,0,0,0,0c0,0-0.1,0-0.1-0.1c0,0,0,0,0,0c0,0-0.1,0-0.1-0.1 c0,0,0,0,0,0c0,0-0.1,0-0.1-0.1c0,0,0,0,0,0c0,0-0.1,0-0.1-0.1c0,0,0,0,0,0c0,0-0.1,0-0.1-0.1c0,0,0,0,0,0c0,0-0.1-0.1-0.1-0.1 c0,0,0,0,0,0c0,0-0.1-0.1-0.1-0.1c0,0,0,0,0,0c-0.3-0.3-0.7-0.6-1-1c0,0,0,0,0,0c0,0-0.1-0.1-0.1-0.1c0,0,0,0,0,0 c0,0-0.1-0.1-0.1-0.1c0,0,0,0,0,0c0,0-0.1-0.1-0.1-0.1c0,0,0,0,0,0c0,0,0-0.1-0.1-0.1c0,0,0,0,0,0c0,0,0-0.1-0.1-0.1c0,0,0,0,0,0 c0,0,0-0.1-0.1-0.1c0,0,0,0,0,0c0,0,0-0.1-0.1-0.1c0,0,0,0,0,0c0,0,0-0.1-0.1-0.1c0,0,0,0,0-0.1c0,0,0-0.1-0.1-0.1c0,0,0,0,0-0.1 c0,0,0-0.1-0.1-0.1c0,0,0,0,0-0.1c0,0,0-0.1,0-0.1c0,0,0,0,0-0.1c0,0,0-0.1,0-0.1c0,0,0,0,0-0.1c0,0,0-0.1,0-0.1c0,0,0,0,0-0.1 c0,0,0-0.1,0-0.1c0,0,0,0,0-0.1c0,0,0-0.1,0-0.1c0,0,0,0,0-0.1c0,0,0-0.1,0-0.1c0,0,0,0,0-0.1c0,0,0-0.1,0-0.1c0,0,0,0,0-0.1 c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1 c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1 c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1 c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0-0.1,0-0.1c0,0,0,0,0-0.1c0-0.1,0-0.1,0-0.2c0-0.1,0-0.3,0.1-0.4 c0-0.1,0-0.1,0-0.2c0-0.1,0-0.1,0-0.2c0-0.1,0-0.2,0.1-0.3c0,0,0-0.1,0-0.1c0-0.1,0-0.2,0.1-0.3c0,0,0,0,0-0.1 c0.2-1,0.6-2.1,1-3.1c0,0,0,0,0,0c1-2.4,2.3-4.3,3-5.2c0.7,0.9,2,2.8,3,5.2c0,0,0,0,0,0c0.4,1,0.8,2.1,1,3.1c0,0,0,0,0,0.1 c0,0.1,0,0.2,0.1,0.3c0,0,0,0.1,0,0.1c0,0.1,0,0.2,0.1,0.3c0,0.1,0,0.1,0,0.2c0,0.1,0,0.1,0,0.2c0,0.1,0,0.3,0.1,0.4 c0.1,0.7,0.1,1.4,0,2.1c-0.1,0.3,0.2,0.7,0.5,0.7c0.3,0.1,0.7-0.2,0.7-0.5c0.1-0.8,0.2-1.6,0-2.5c0-0.1,0-0.2,0-0.3c0,0,0,0,0,0 c0-0.1,0-0.2,0-0.2c0,0,0,0,0,0c0-0.1,0-0.2,0-0.2c0,0,0,0,0,0c0-0.1,0-0.2-0.1-0.2c0,0,0,0,0,0c0.1-0.1,0.2-0.1,0.3-0.2 c0,0,0.1,0,0.1,0c0.1,0,0.2-0.1,0.3-0.1c0,0,0.1,0,0.1-0.1c0.1,0,0.2-0.1,0.2-0.1c1.8-0.9,3.4-1.5,4.3-1.8 C32.4,9.4,31.8,12.9,29.7,15.9z"/>
+										</svg>
+									</figure>
+								</div>
+								<h6 class="mb-0"><a href="#" class="stretched-link">farm it</a></h6>
+							</div>
+						</div>
+
+						<!-- Slider item -->
+						<div>
+							<div class="card card-body bg-light text-center align-items-center">
+								<!-- Icon -->
+								<div class="icon-xl bg-mode rounded-circle mb-3">
+									<figure>
+										<svg width="47.9px" height="47.3px" viewBox="0 0 47.9 47.3" style="enable-background:new 0 0 47.9 47.3;" xml:space="preserve">
+											<path class="fill-mode-inverse" d="M37.5,20.3c-2.3,1.5-3.6,4.1-3.3,6.9l-10,6.4l-10-6.4c0.3-2.7-1-5.4-3.3-6.9c-1.5-1-3.3-1.5-5.2-1.3 c-3.2,0.3-5.6,3.2-5.3,6.4c0,0.4,0.1,0.7,0.2,1.1c0.5,1.8,1.6,3.3,3.1,4.3c2.2,1.6,5.2,1.8,7.6,0.5l7.8,5.5l-7.4,4.7 c-1.4,0.9-1.9,2.8-1,4.3c0,0,0,0.1,0.1,0.1c1,1.4,2.9,1.8,4.3,0.8c0,0,0,0,0.1,0l8.9-6.3l8.9,6.3c1.4,1,3.3,0.7,4.3-0.7 c1-1.4,0.7-3.3-0.7-4.3c-0.1,0-0.1-0.1-0.2-0.1l-7.4-4.7l7.8-5.5c2.4,1.3,5.4,1.1,7.6-0.5c3.3-2.2,4.3-6.3,2.4-9.2 S40.8,18.1,37.5,20.3L37.5,20.3z M14.4,45.4c-0.7,0.5-1.7,0.3-2.1-0.4c-0.5-0.7-0.3-1.6,0.4-2.1c0,0,0,0,0,0l7.9-5.1l2.2,1.6 L14.4,45.4z M36.4,43.9c0.2,0.8-0.4,1.6-1.2,1.8c-0.4,0.1-0.8,0-1.2-0.2L11.9,29.7c-0.3-0.2-0.6-0.2-0.9,0c-1.9,1.3-4.4,1.2-6.3-0.2 c-1.2-0.8-2.1-2-2.5-3.4c-0.7-2.3,0.6-4.6,2.8-5.3c0.3-0.1,0.6-0.1,0.9-0.2c1.4-0.2,2.9,0.2,4.1,1c2,1.2,3,3.5,2.5,5.7 c-0.1,0.3,0.1,0.7,0.3,0.9l22.9,14.7C36.1,43.1,36.4,43.5,36.4,43.9z M43.7,29.5c-1.8,1.4-4.3,1.4-6.3,0.2c-0.3-0.2-0.6-0.2-0.9,0 l-8.7,6.2l-2.1-1.3l9.9-6.3c0.3-0.2,0.4-0.5,0.3-0.9c-0.4-2.2,0.6-4.5,2.5-5.7c2.5-1.7,5.8-1.3,7.2,0.8 C47.1,24.6,46.2,27.8,43.7,29.5L43.7,29.5z"/>
+											<path class="fill-primary" d="M32.9,27l2.3-11.3c3.9-0.3,6.8-3.8,6.5-7.7c-0.3-3.7-3.4-6.5-7.1-6.5c-1.6,0-3.2,0.5-4.4,1.5 c-2.2-3.2-6.6-4.1-9.9-1.9c-0.7,0.5-1.4,1.1-1.9,1.9c-1.3-1-2.8-1.5-4.4-1.5c-3.9,0-7.1,3.2-7.1,7.1c0,3.7,2.8,6.8,6.5,7.1L15.5,27 l1.6-0.3l-0.4-2.2h15.2l-0.4,2.2L32.9,27z M29.1,22.9l0.7-4.6l-1.6-0.2l-0.7,4.9H25v-8.7h-1.6v8.7h-2.5l-0.7-4.9l-1.6,0.2l0.7,4.6 h-3l-1.6-8.1c-0.1-0.4-0.4-0.6-0.8-0.6c-3.1,0-5.5-2.5-5.5-5.5s2.5-5.5,5.5-5.5c1.5,0,3,0.6,4,1.7c0.3,0.3,0.8,0.3,1.1,0 c0.1-0.1,0.1-0.1,0.2-0.2c1.3-2.7,4.6-3.9,7.4-2.6c1.1,0.5,2,1.4,2.6,2.6c0.2,0.4,0.7,0.6,1.1,0.4c0.1,0,0.2-0.1,0.2-0.2 c1-1.1,2.5-1.7,4-1.7c3.1,0,5.5,2.5,5.5,5.5s-2.5,5.5-5.5,5.5c-0.4,0-0.7,0.3-0.8,0.6l-1.6,8.1H29.1z"/>
+										</svg>
+									</figure>
+								</div>
+								<h6 class="mb-0"><a href="#" class="stretched-link">eat it</a></h6>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<!-- Category END -->
+		</div>
+	</div>
+</section>
+<!-- =======================
+Category END -->
+
+
+</main>
+<!-- **************** MAIN CONTENT END **************** -->
+
+<!-- =======================
+Footer START -->
+<footer class="bg-dark py-7">
+	<div class="container">
+		<div class="row mx-auto">
+			<div class="col-md-10 col-xl-6 mx-auto text-center">
+				<!-- Logo -->
+				<img class="mx-auto h-60px" src="new_york_sunshine/project_solar/static/assets/images/about/otto.png" alt="logo">
+				<p class="mt-3 text-white">Learn to Live Aloha</p>
+				<!-- Links
+				<ul class="nav justify-content-between text-primary-hover mt-3 mt-md-0">
+					<li class="nav-item"><a class="nav-link p-2 text-white" href="#">About</a></li>
+					<li class="nav-item"><a class="nav-link p-2 text-white" href="#">Terms</a></li>
+					<li class="nav-item"><a class="nav-link p-2 text-white" href="#">Privacy</a></li>
+					<li class="nav-item"><a class="nav-link p-2 text-white" href="#">Career</a></li>
+					<li class="nav-item"><a class="nav-link p-2 text-white" href="#">Contact us</a></li>
+					<li class="nav-item"><a class="nav-link p-2 text-white" href="#">Cookies</a></li>
+				</ul> -->
+				<!-- Social media button -->
+				<ul class="list-inline mt-3 mb-0">
+					<li class="list-inline-item">
+						<a class="btn btn-white btn-sm shadow px-2 text-facebook" href="#">
+							<i class="fab fa-fw fa-facebook-f"></i>
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a class="btn btn-white btn-sm shadow px-2 text-instagram" href="#">
+							<i class="fab fa-fw fa-instagram"></i>
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a class="btn btn-white btn-sm shadow px-2 text-twitter" href="#">
+							<i class="fab fa-fw fa-twitter"></i>
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a class="btn btn-white btn-sm shadow px-2 text-linkedin" href="#">
+							<i class="fab fa-fw fa-linkedin-in"></i>
+						</a>
+					</li>
+				</ul>
+				<!-- copyright text -->
+				<div class="text-muted text-primary-hover mt-3"> Copyrights ©2023 Forvava.</div>
+			</div>
+		</div>
+
+	</div>
+</footer>
+<!-- =======================
+Footer END -->
+
+<!-- Back to top -->
+<div class="back-top"></div>
+
+<!-- Bootstrap JS -->
+<script src="new_york_sunshine/project_solar/static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Vendors -->
+<script src="new_york_sunshine/project_solar/static/assets/vendor/choices/js/choices.min.js"></script>
+<script src="new_york_sunshine/project_solar/static/assets/vendor/tiny-slider/tiny-slider.js"></script>
+<script src="new_york_sunshine/project_solar/static/assets/vendor/flatpickr/js/flatpickr.min.js"></script>
+<script src="new_york_sunshine/project_solar/static/assets/vendor/glightbox/js/glightbox.js"></script>
+
+<!-- ThemeFunctions -->
+<script src="new_york_sunshine/project_solar/static/assets/js/functions.js"></script>
+
 </body>
 </html>
+
+
+{% endblock %}
+
