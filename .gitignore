@@ -32,6 +32,7 @@ yarn-error.log*
 /perf.data
 /perf.data.old
 /massif.out.*
+/venv
 venv
 
 *~
@@ -307,3 +308,6 @@ Cargo.lock
 
 # MSVC Windows builds of rustc generate these, which store debugging information
 *.pdb
+
+
+/static
