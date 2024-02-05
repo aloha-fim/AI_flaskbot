@@ -27,6 +27,22 @@ def index():
 
 @app.route('/test', methods=['GET','POST'])
 def test():
+    if request.method == 'POST':
+        if 'file' not in request.files:
+            return jsonify({"error": "No file in the request"}), 400
+
+        file = request.files['file']
+
+        if file.filename == '':
+            return jsonify({"error":"No selected file"}), 400
+
+        filename = secure_filename(file.filename)
+        file.save(filename)
+
+        question = request.form['question']
+        response = process_pdf_query(filename, question)
+
+        return render_template('test.html', response=response)
 
     return render_template('test.html')
 
