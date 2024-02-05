@@ -14,17 +14,17 @@
 <body>
 
 <div class="container">
-  <h2>Intel Feed</h2>
+  <h2></h2>
 
   {% if response %}
   <div class="card border-info mb-3" style="max-width: 18rem;">
     <div class="card-header">
-      Intel Application
+      Intel Application Result
     </div>
     <div class="card-body text-info">
       <h5 class="card-title">Discovery</h5>
       <p class="card-text">{{ response }}</p>
-      <a href="#" class="btn btn-primary">Activate</a>
+      <a href="{{ url_for('test') }}" class="btn btn-primary">Activate</a>
     </div>
   </div>
   {% endif %}
