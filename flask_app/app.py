@@ -47,6 +47,11 @@ def test():
     return render_template('test.html')
 
 
+@app.route('/bootstrap', methods=['GET','POST'])
+def bootstrap():
+
+    return render_template('index.html')
+
 if __name__ == '__main__':
         app.run(debug=True, port=8001)
 
