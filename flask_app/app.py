@@ -42,7 +42,7 @@ def test():
         question = request.form['question']
         response = process_pdf_query(filename, question)
 
-        return render_template('test_result.html', response=response)
+        return render_template('index.html', response=response)
 
     return render_template('test.html')
 
