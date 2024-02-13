@@ -26,9 +26,9 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                            <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8001" target="iframe_a">AI Chat</a></li>
+                            <li class="nav-item"><a class="nav-link" href="about.html">Market</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contact.html">Business</a></li>
                         </ul>
                     </div>
                 </div>
@@ -66,7 +66,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="{{url_for('static', filename='assets/images/desian_wall.jpg')}}" alt="..." /></div>
+                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+                            <iframe class="img-fluid rounded-3 my-5" src="{{url_for('static', filename='assets/images/desian_wall.jpg')}}" name="iframe_a" height="300px" width="100%" title="Iframe Example"></iframe>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -92,7 +94,7 @@
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Blog post title</h5></a>
-                                    <p class="card-text mb-0">Leetcode from Google employees in building</p>
+                                    <p class="card-text mb-0">Leetcode Google employees in building</p>
                                 </div>
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
