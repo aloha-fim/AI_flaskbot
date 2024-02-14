@@ -4,7 +4,7 @@ from pdf_processor import process_pdf_query
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET','POST'])
+@app.route('/flaskapp', methods=['GET','POST'])
 def index():
     if request.method == 'POST':
         if 'file' not in request.files:
@@ -53,5 +53,5 @@ def bootstrap():
     return render_template('index.html')
 
 if __name__ == '__main__':
-        app.run(debug=True, port=8001)
+        app.run(debug=True, port=5000)
 
