@@ -26,9 +26,11 @@
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            {% if current_user.is_authenticated %}
                             <li class="nav-item"><a class="nav-link" href="http://localhost:5173/" target="iframe_a">AI Chat</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">Market</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Business</a></li>
+                            {% else %}
+                            <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>
@@ -59,7 +61,7 @@
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
                             <div class="my-5 text-center text-xl-start">
                                 <h5 class="display-7 fw-bolder text-white mb-2">INTEL</h5>
-                                <p class="lead fw-normal text-white-50 mb-4">Test</p>
+                                <p class="lead fw-normal text-white-50 mb-4">AI Results</p>
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
                                     <!--<a class="btn btn-info btn-lg px-4" href="#features">Get Started</a>-->
                                     <a class="btn btn-outline-light btn-md px-3" href="#!">Refine</a>
@@ -67,8 +69,9 @@
                             </div>
                         </div>
                         <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+                            <div class="my-5 text-center text-xl-start">
                             <iframe class="rounded-3 my-5" src="{{url_for('static', filename='assets/images/desian_wall.jpg')}}" height="600px" width="100%" name="iframe_a" id="myIframe" scrolling="no" title="Iframe Example"></iframe>
-
+                            </div>
 
                         </div>
                     </div>
