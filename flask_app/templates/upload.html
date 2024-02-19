@@ -14,7 +14,8 @@
 <body>
 
 <div class="container">
-  <h2>Intel Feed</h2>
+  <br>
+  <h5>Pandas AI</h5>
   <form class="form-horizontal" action="/" method="POST" enctype="multipart/form-data">
     <div class="form-group">
       <label class="control-label col-sm-2" for="file">File:</label>
@@ -28,16 +29,19 @@
         <input type="text" class="form-control" id="question" placeholder="Enter Question" name="question" required>
       </div>
     </div>
+    <br>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" value="Submit" class="btn btn-default">Submit</button>
+        <button type="submit" value="Submit" class="btn btn-info">Submit</button>
       </div>
     </div>
+    <br>
+    <img src="{{url_for('static', filename='assets/images/pandasai.jpg')}}" alt="PandasAI" class="form-control" width="345" height="345">
   </form>
   {% if response %}
   <div class="card border-info mb-3" style="max-width: 18rem;">
     <div class="card-header">
-      Intel Application
+      Powered by Pandas AI
     </div>
     <div class="card-body text-info">
       <h5 class="card-title">Discovery</h5>
