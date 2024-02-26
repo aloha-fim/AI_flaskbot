@@ -36,10 +36,11 @@
       </div>
     </div>
     <br>
-    <img src="{{url_for('static', filename='assets/images/pandasai.jpg')}}" alt="PandasAI" class="form-control" width="345" height="345">
+    <!--<img src="{{url_for('static', filename='assets/images/pandasai.jpg')}}" alt="PandasAI" class="form-control" width="345" height="345">-->
   </form>
   {% if response %}
-  <div class="card border-info mb-3" style="max-width: 18rem;">
+  <div class="col-sm-offset-2 col-sm-10">
+  <div class="card border-info mb-3" style="max-width: 20rem;">
     <div class="card-header">
       Powered by Pandas AI
     </div>
@@ -49,6 +50,8 @@
       <a href="#" class="btn btn-primary">Activate</a>
     </div>
   </div>
+  {% else %}
+    <img src="{{url_for('static', filename='assets/images/pandasai.jpg')}}" alt="PandasAI" class="form-control" width="345" height="345">
   {% endif %}
 </div>
 
