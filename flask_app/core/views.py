@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, jsonify, Response
+from flask import Flask, request, render_template, jsonify, Response, Blueprint
 from werkzeug.utils import secure_filename
 from pdf_processor import process_pdf_query
 
