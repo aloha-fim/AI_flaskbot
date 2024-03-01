@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template, jsonify, Response, Blueprint
 from werkzeug.utils import secure_filename
-from pdf_processor import process_pdf_query
+from flask_app.pdf_processor import process_pdf_query
 
 core = Blueprint('core',__name__)
 
