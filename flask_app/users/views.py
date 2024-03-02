@@ -1,7 +1,7 @@
 from flask import render_template,url_for,flash,redirect,request,Blueprint
 from flask_login import login_user, current_user, logout_user, login_required
 from flask_app import db
-from flask_app.models import User, SolarPost
+from flask_app.models import User, OttoPost
 from flask_app.users.forms import RegistrationForm, LoginForm, UpdateUserForm
 from flask_app.users.picture_handler import add_profile_pic
 
