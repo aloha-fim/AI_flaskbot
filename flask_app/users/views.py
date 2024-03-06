@@ -28,7 +28,7 @@ def register():
 @users.route("/logout")
 def logout():
     logout_user()
-    return redirect(url_for("core.index"))
+    return redirect(url_for("core.test"))
 
 #Login
 @users.route('/login',methods=['GET','POST'])

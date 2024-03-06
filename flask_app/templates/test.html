@@ -20,7 +20,9 @@
         <link href="./css/styles.css" rel="stylesheet" />-->
         <link href="{{url_for('static', filename="assets/css/cover_styles.css")}}" rel="stylesheet" />
     </head>
+
     <body>
+
         <!-- Background Video-->
         <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="{{url_for('static', filename='assets/mp4/bg.mp4')}}" type="video/mp4" /></video>
         <!-- Masthead-->
@@ -32,6 +34,10 @@
                     <!-- * * * * * * * * * * * * * * *-->
 
                     <div class="container">
+                      <ul class="nav">
+                        {% if current_user.is_authenticated %}
+                          <li class="nav-link"><a href="{{ url_for('users.logout') }}">Log Out</a></li>
+
 
                         <form class="form-horizontal" action="{{ url_for('core.test') }}" method="POST" enctype="multipart/form-data">
                           <div class="form-group">
@@ -67,6 +73,14 @@
                         </div>
                         {% endif %}
                       </div>
+
+                      {% else %}
+                      <li class="nav-link"><a href="{{ url_for('users.login') }}">Log In</a></li>
+                      <li class="nav-link"><a href="{{ url_for('users.register') }}">Register</a></li>
+                    {% endif %}
+                  </ul>
+
+
                 </div>
             </div>
         </div>
