@@ -1,6 +1,5 @@
 {% block content %}
 
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -26,9 +25,7 @@
         <!-- Background Video-->
         <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="{{url_for('static', filename='assets/mp4/bg.mp4')}}" type="video/mp4" /></video>
 
-
-
-            {% if current_user.is_authenticated %}
+        {% if current_user.is_authenticated %}
 
         <!-- Masthead-->
         <div class="masthead">
@@ -37,7 +34,6 @@
                     <h1 class="fst-italic lh-1 mb-4">OTTO AI</h1>
                     <p class="mb-5">Innovate and Refine with Customer Focus</p>
                     <!-- * * * * * * * * * * * * * * *-->
-
                         <form class="form-horizontal" action="{{ url_for('core.test') }}" method="POST" enctype="multipart/form-data">
                           <div class="form-group">
                             <label class="control-label col-sm-2" for="file"></label>
@@ -59,7 +55,7 @@
                             </div>
                           </div>
                         </form>
-
+                        <!--
                         {% if response %}
                         <div class="card border-info mb-3" style="max-width: 18rem;">
                           <div class="card-header">
@@ -72,18 +68,17 @@
                           </div>
                         </div>
                         {% endif %}
-                      </div>
-                    </div>
-                  </div>
-
-                                                        <!-- Social Icons-->
+                        -->
+                </div>
+            </div>
+        </div>
+        <!-- Social Icons-->
         <!-- For more icon options, visit https://fontawesome.com/icons?d=gallery&p=2&s=brands-->
         <div class="social-icons">
           <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
               <a class="btn btn-dark m-3" href="{{ url_for('users.logout') }}"><i class="fa-solid fa-right-from-bracket"></i></a>
           </div>
-      </div>
-
+        </div>
 
         {% else %}
 
@@ -94,32 +89,17 @@
                   <h1 class="fst-italic lh-1 mb-4">OTTO AI</h1>
                   <p class="mb-5">Innovate and Refine with Customer Focus</p>
                   <!-- * * * * * * * * * * * * * * *-->
-
-
-
-
-                    </div>
-                  </div>
-                </div>
-
-
+              </div>
+          </div>
+        </div>
         <!-- Social Icons-->
-<!-- For more icon options, visit https://fontawesome.com/icons?d=gallery&p=2&s=brands-->
-<div class="social-icons">
-<div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
-<a class="btn btn-dark m-3" href="{{ url_for('users.login') }}"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
-</div>
-</div>
-{% endif %}
-
-
-
-
-
-
-
-
-
+        <!-- For more icon options, visit https://fontawesome.com/icons?d=gallery&p=2&s=brands-->
+        <div class="social-icons">
+          <div class="d-flex flex-row flex-lg-column justify-content-center align-items-center h-100 mt-3 mt-lg-0">
+            <a class="btn btn-dark m-3" href="{{ url_for('users.login') }}"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+          </div>
+        </div>
+        {% endif %}
 
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
