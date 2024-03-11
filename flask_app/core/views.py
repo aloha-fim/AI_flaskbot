@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template, jsonify, Response, Blueprint
 from werkzeug.utils import secure_filename
 from flask_app.pdf_processor import process_pdf_query
+import requests
 
 core = Blueprint('core',__name__)
 
@@ -50,4 +51,8 @@ def test():
 @core.route('/bootstrap', methods=['GET','POST'])
 def bootstrap():
 
-    return render_template('index.html')
+    api_url = "http://localhost:8001/"
+    response = requests.get(api_url)
+    data = response.json()
+
+    return render_template('index.html', data=data)
