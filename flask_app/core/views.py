@@ -51,7 +51,7 @@ def test():
 @core.route('/bootstrap', methods=['GET','POST'])
 def bootstrap():
 
-    api_url = "http://localhost:8001/"
+    api_url = "http://localhost:8001/results_list/"
     response = requests.get(api_url)
     data = response.json()
 
