@@ -97,11 +97,9 @@
                             </div>
                         </div>
                     </div>
-                    <div>test
-                        {% for x in data %}
-                            {{ x }}
-                        {% endfor %}
-                    </div>
+
+                    {% for x in data %}
+
                     <div class="row gx-5">
                         <div class="col-lg-4 mb-5">
                             <div class="card h-100 shadow border-0">
@@ -110,7 +108,7 @@
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">Travel +</div>
                                     <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">M2 Adventure</h5></a>
-                                    <p class="card-text mb-0">HI OTTO: How was hidden village</p>
+                                    <p class="card-text mb-0">HI OTTO: How was hidden village {{ x|tojson }}</p>
                                 </div>
                                 <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                     <div class="d-flex align-items-end justify-content-between">
@@ -170,6 +168,9 @@
                             </div>
                         </div>
                     </div>
+
+                    {% endfor %}
+
                     <!-- Call to action-->
                     <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
                         <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
