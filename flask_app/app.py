@@ -49,8 +49,9 @@ def test():
 
 @app.route('/bootstrap', methods=['GET','POST'])
 def bootstrap():
+    response = request.get('http://localhost:5173/message_api/')
 
-    return render_template('index.html')
+    return render_template('index.html', data=response.json())
 
 if __name__ == '__main__':
         app.run(debug=True, port=8081, host='0.0.0.0')
